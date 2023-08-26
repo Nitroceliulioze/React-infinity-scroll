@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "alt": "Brown Rocks During Golden Hour",
+    "photographer": "Joey Farina",
+    "liked": false,
+    "src": {
+        "medium": "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&h=350"
+      }
+  },
+  {
+    "id": 2,
+    "alt": " Golden Hour",
+    "photographer": "Joe Farina",
+    "liked": false,
+    "src": {
+        "medium": "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&h=350"
+      }
+  },
+  {
+    "id": 3,
+    "alt": "Brown Rocks",
+    "photographer": "Joey Far",
+    "liked": false,
+    "src": {
+        "medium": "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&h=350"
+      }
+  },
+  {
+    "id": 4,
+    "alt": "Brown Rocks During Golden Hour",
+    "photographer": "Joey Farina",
+    "liked": false,
+    "src": {
+        "medium": "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&h=350"
+      }
+  },
+  {
+    "id": 5,
+    "alt": " Golden Hour",
+    "photographer": "Joe Farina",
+    "liked": false,
+    "src": {
+        "medium": "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&h=350"
+      }
+  },
+  {
+    "id": 6,
+    "alt": "Brown Rocks",
+    "photographer": "Joey Far",
+    "liked": false,
+    "src": {
+        "medium": "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&h=350"
+      }
+  },
+  {
+    "id": 7,
+    "alt": "Brown Rocks During Golden Hour",
+    "photographer": "Joey Farina",
+    "liked": false,
+    "src": {
+        "medium": "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&h=350"
+      }
+  },
+  {
+    "id": 8,
+    "alt": " Golden Hour",
+    "photographer": "Joe Farina",
+    "liked": false,
+    "src": {
+        "medium": "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&h=350"
+      }
+  },
+  {
+    "id": 3,
+    "alt": "Brown Rocks",
+    "photographer": "Joey Far",
+    "liked": false,
+    "src": {
+        "medium": "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg?auto=compress&cs=tinysrgb&h=350"
+      }
+  }
+]
