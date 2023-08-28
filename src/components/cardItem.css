@@ -1,5 +1,41 @@
-.card {
-    width: 500px;
-    height: 300px;
+.card img{
+    width: 300px;
+    height: 200px;
+    position: relative;
     object-fit: cover;
+    border-radius: 5px;
+}
+.overlay {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    background: rgba(45, 45, 45, 0.5);
+    border-radius: 5px;
+    flex-direction: column;
+    justify-content: center;
+    color: aliceblue;
+    text-align: center;
+    z-index: 10;
+    position: absolute;  
+    transform: translateY(-102%);
+  }
+
+hr {
+    width: 20%;
+    color: aliceblue;
+    border: 1px solid aliceblue;
+} 
+.title {
+    font-weight: bold;
+}
+.author {
+    font-style: italic;
+}
+.fav-btn {
+    background-color: transparent;
+    border: 1px solid aliceblue;
+    color: aliceblue;
+    border-radius: 50px;
+    margin: 20px 10px 0 10px;
+    padding: 10px 15px;
 }

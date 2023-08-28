@@ -1,15 +1,21 @@
+import "./cardItem.css";
+
 const Carditem = ({ id, alt, photographer, src, liked }) => {
   return (
-    <div className="card">
-      <div>
-        <img src={src.medium} />
+    <div>
+      <div className="card">
+
+          <img src={src.medium} alt={alt}/>
+
       </div>
       <div className="overlay">
-        {alt}
-        <hr />
-        {photographer}
-        <br />
-        <button>Favourite</button>
+        <div className="overlay-content">
+          <span className="title"> {alt} </span>
+          <hr />
+          <span className="author"> {photographer} </span>
+          <br />
+          <button className="fav-btn" type="button">Favourite</button>
+        </div>
       </div>
     </div>
   );

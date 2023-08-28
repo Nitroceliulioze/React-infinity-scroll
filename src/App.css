@@ -1,15 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,300&display=swap');
+
 body {
   background: silver;
-  margin: 0;
+  margin: 30px;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 .container {
   margin: 30px;
 } 
 .items {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   gap: 30px;
 }
+
