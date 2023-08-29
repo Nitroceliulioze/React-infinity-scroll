@@ -5,6 +5,7 @@
     object-fit: cover;
     border-radius: 5px;
     cursor: pointer;
+    z-index: 1;
 }
 .overlay {
     width: 300px;
@@ -19,8 +20,15 @@
     z-index: 10;
     position: absolute;  
     transform: translateY(-102%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
   }
 
+  .overlay.visible {
+    opacity: 1;
+    visibility: visible;
+  }
 hr {
     width: 20%;
     color: aliceblue;
@@ -39,4 +47,5 @@ hr {
     border-radius: 50px;
     margin: 20px 10px 0 10px;
     padding: 10px 15px;
+    cursor: pointer;
 }
