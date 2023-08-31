@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./cardItem.css";
 import { useFavouritePhotos } from "../context/FavouritePhotosContext";
 
@@ -16,6 +16,13 @@ const Carditem = ({ id, alt, photographer, src, liked }) => {
     setIsHovered(false);
   };
 
+  useEffect(() => {
+    const isPhotoFavourite = localStorage.getItem("favourite-photo")
+      ? JSON.parse(localStorage.getItem("favourite-photo")).some(photo => photo.id === id)
+      : false;
+    setIsFavourite(isPhotoFavourite);
+  }, [id]);
+
   const toggleFavourite = () => {
     if (isFavourite) {
       removeFromFavourites(id);
@@ -24,6 +31,7 @@ const Carditem = ({ id, alt, photographer, src, liked }) => {
     }
     setIsFavourite((prevIsFavourite) => !prevIsFavourite);
   };
+
   return (
     <div
       className="card-container"

@@ -1,14 +1,14 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext } from 'react';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 const FavouritePhotosContext = createContext({})
-
 
 export function useFavouritePhotos() {
     return useContext(FavouritePhotosContext)
 }
 
 export function FavouritePhotosProvider( { children }) {
-    const [favourite, setFavourite] = useState([])
+    const [favourite, setFavourite] = useLocalStorage("favourite-photo", [])
 
     function addToFavourites(id) {
         setFavourite(currFav => {
