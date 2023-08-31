@@ -7,7 +7,7 @@ const Carditem = ({ id, alt, photographer, src, liked }) => {
 
   const [isHovered, setIsHovered] = useState(false);
   const [isFavourite, setIsFavourite] = useState(false);
-  
+
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -22,7 +22,7 @@ const Carditem = ({ id, alt, photographer, src, liked }) => {
     } else {
       addToFavourites(id);
     }
-    setIsFavourite(prevIsFavourite => !prevIsFavourite);
+    setIsFavourite((prevIsFavourite) => !prevIsFavourite);
   };
   return (
     <div
@@ -39,8 +39,8 @@ const Carditem = ({ id, alt, photographer, src, liked }) => {
           <hr />
           <span className="author"> {photographer} </span>
           <br />
-          <button className="fav-btn" type="button" onClick={toggleFavourite}>
-          {isFavourite ? "Remove from Favorites" : "Favorite"}
+          <button className={`fav-btn ${isFavourite ? "favourite" : ""}`} type="button" onClick={toggleFavourite}>
+            {isFavourite ? "Remove from Favorites" : "Favorite"}
           </button>
         </div>
       </div>

@@ -40,6 +40,15 @@ hr {
 .author {
     font-style: italic;
 }
+.fav-btn.favourite {
+    background-color: aliceblue;
+    border: 1px solid aliceblue;
+    color: rgb(95, 94, 94);
+    border-radius: 50px;
+    margin: 20px 10px 0 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
 .fav-btn {
     background-color: transparent;
     border: 1px solid aliceblue;
