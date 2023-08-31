@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import CardItem from "./components/Carditem";
 import "./App.css";
 import { createClient } from 'pexels';
+import { FavouritePhotosProvider } from './context/FavouritePhotosContext';
 
 function App() {
   const [photos, setPhotos] = useState([]);
@@ -47,7 +48,7 @@ function App() {
   }, [loading, error]); // Add 'loading' as a dependency to prevent event listener duplicates
 
   return (
-    <>
+    <FavouritePhotosProvider>
       <a href="https://www.pexels.com">Photos provided by Pexels</a>
       <div className="container">
         <div className="items">
@@ -60,7 +61,7 @@ function App() {
           {error && <div>Error loading photos: {error.message}</div>}
         </div>
       </div>
-    </>
+    </FavouritePhotosProvider>
   );
 }
 
