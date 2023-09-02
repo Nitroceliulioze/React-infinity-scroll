@@ -1,0 +1,36 @@
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-inline: 50px;
+}
+.input {
+    width: 50%;
+    background: transparent;
+    padding: 10px;
+    border-radius: 5px;
+}
+.heart{
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    transform-origin: center;
+    position: relative;
+    background: grey;
+    cursor: pointer;
+    margin-top: 10px;
+ }
+ .heart::before, .heart::after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: grey;
+ }
+ .heart::before{
+    left: -10px;
+ }
+ .heart::after{
+    top: -10px;
+ }

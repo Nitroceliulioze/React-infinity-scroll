@@ -1,17 +1,15 @@
 import { useState, useEffect } from "react";
 import "./cardItem.css";
-import { useFavouritePhotos } from "../context/FavouritePhotosContext";
+import { useFavouritePhotos } from "../../context/FavouritePhotosContext";
 
-const Carditem = ({ id, alt, photographer, src, liked }) => {
+const Carditem = ({ id, alt, photographer, src }) => {
   const { addToFavourites, removeFromFavourites } = useFavouritePhotos();
-
   const [isHovered, setIsHovered] = useState(false);
   const [isFavourite, setIsFavourite] = useState(false);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
-
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
