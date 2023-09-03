@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./cardItem.css";
-import { useFavouritePhotos } from "../context/FavouritePhotosContext";
+import { useFavouritePhotos } from "../../context/FavouritePhotosContext";
 
 const Carditem = ({ id, alt, photographer, src }) => {
   const { addToFavourites, removeFromFavourites, favourite } = useFavouritePhotos();

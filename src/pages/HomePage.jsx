@@ -16,12 +16,12 @@ const HomePage = () => {
 
   const fetchMorePhotos = async () => {
     const perPage = 9;
-    const nextPage = page + 1;
+    const nextPage = page;
     setLoading(true);
     setError(false);
     try {
       await fetch(
-        `https://api.pexels.com/v1//search?query=${query}?per_page=${perPage}`,
+        `https://api.pexels.com/v1/search?query=${query}&per_page=${perPage}&page=${nextPage}`,
         {
           headers: {
             Authorization:
@@ -34,7 +34,7 @@ const HomePage = () => {
         })
         .then((newPhotos) => {
           setPhotos((prevPhotos) => [...prevPhotos, ...newPhotos.photos]);
-          setPage(nextPage);
+          setPage(nextPage + 1);
           setLoading(false);
         });
     } catch (error) {
