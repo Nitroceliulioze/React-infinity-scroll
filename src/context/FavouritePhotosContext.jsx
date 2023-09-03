@@ -27,7 +27,7 @@ export function FavouritePhotosProvider( { children }) {
     }
 
     return (
-        <FavouritePhotosContext.Provider value={{ addToFavourites, removeFromFavourites }}>
+        <FavouritePhotosContext.Provider value={{ addToFavourites, removeFromFavourites, favourite }}>
             {children} 
         </FavouritePhotosContext.Provider>
     )
