@@ -8,7 +8,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 .container {
-  margin: 30px;
+ margin-block: 30px;
 } 
 .items {
   display: flex;
