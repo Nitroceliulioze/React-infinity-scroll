@@ -1,51 +1,57 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import CardItem from "./components/Carditem";
 import "./App.css";
-import { createClient } from 'pexels';
-import { FavouritePhotosProvider } from './context/FavouritePhotosContext';
+import { createClient } from "pexels";
+import { FavouritePhotosProvider } from "./context/FavouritePhotosContext";
 
 function App() {
   const [photos, setPhotos] = useState([]);
-  const [page, setPage] = useState(1); // Track the current page
-  const [loading, setLoading] = useState(false); // Track loading state
-  const [error, setError] = useState(null); // Add an error state
-
+  const [page, setPage] = useState(1); 
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false); 
 
   const fetchMorePhotos = () => {
     setLoading(true);
-    setError(null); // Clear any previous errors
-    const client = createClient('HdUo4wBiS5H3uc95VQUtrCrKKMbnSrU4xaBmVgjxryMEFmQe00wSucOg');
-    const query = 'sustainable';
+    setError(false);
+    const client = createClient(
+      "HdUo4wBiS5H3uc95VQUtrCrKKMbnSrU4xaBmVgjxryMEFmQe00wSucOg"
+    );
+    const query = "sustainable";
     const perPage = 9;
     const nextPage = page + 1;
-
-    client.photos.search({ query, per_page: perPage, page: nextPage }).then(newPhotos => {
-      setPhotos(prevPhotos => [...prevPhotos, ...newPhotos.photos]);
-      setPage(nextPage);
+    try {
+      client.photos
+        .search({ query, per_page: perPage, page: page })
+        .then((newPhotos) => {
+          setPhotos((prevPhotos) => [...prevPhotos, ...newPhotos.photos]);
+          setPage(nextPage);
+          setLoading(false);
+        });
+    } catch (error) {
       setLoading(false);
-    });
+      setError(true);
+    }
   };
 
   useEffect(() => {
-    fetchMorePhotos(); // Fetch initial photos
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    fetchMorePhotos();
+    setPhotos([]);
   }, []);
 
   const handleScroll = () => {
     const scrollTop = window.innerHeight + window.scrollY;
     const scrollHeight = document.body.scrollHeight;
-    const scrolledToBottom = scrollTop >= scrollHeight - 1000; // Threshold for fetching more data
+    const scrolledToBottom = scrollTop >= scrollHeight - 1000;
 
     if (scrolledToBottom && !loading && !error) {
-      fetchMorePhotos(); // Fetch more data when scrolled to the bottom
+      fetchMorePhotos();
     }
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loading, error]); // Add 'loading' as a dependency to prevent event listener duplicates
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [loading, error]);
 
   return (
     <FavouritePhotosProvider>
