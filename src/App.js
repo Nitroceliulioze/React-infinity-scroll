@@ -16,12 +16,12 @@ function App() {
     const client = createClient(
       "HdUo4wBiS5H3uc95VQUtrCrKKMbnSrU4xaBmVgjxryMEFmQe00wSucOg"
     );
-    const query = "sustainable";
+    const query = "sun";
     const perPage = 9;
     const nextPage = page + 1;
     try {
       client.photos
-        .search({ query, per_page: perPage, page: page })
+        .search({ query, per_page: perPage, page })
         .then((newPhotos) => {
           setPhotos((prevPhotos) => [...prevPhotos, ...newPhotos.photos]);
           setPage(nextPage);

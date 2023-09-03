@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import "./cardItem.css";
 import { useFavouritePhotos } from "../context/FavouritePhotosContext";
 
-const Carditem = ({ id, alt, photographer, src, liked }) => {
-  const { addToFavourites, removeFromFavourites } = useFavouritePhotos();
+const Carditem = ({ id, alt, photographer, src }) => {
+  const { addToFavourites, removeFromFavourites, favourite } =
+    useFavouritePhotos();
 
   const [isHovered, setIsHovered] = useState(false);
   const [isFavourite, setIsFavourite] = useState(false);
@@ -17,9 +18,7 @@ const Carditem = ({ id, alt, photographer, src, liked }) => {
   };
 
   useEffect(() => {
-    const isPhotoFavourite = localStorage.getItem("favourite-photo")
-      ? JSON.parse(localStorage.getItem("favourite-photo")).some(photo => photo.id === id)
-      : false;
+    const isPhotoFavourite = favourite.some((photo) => photo.id === id);
     setIsFavourite(isPhotoFavourite);
   }, [id]);
 
@@ -47,7 +46,11 @@ const Carditem = ({ id, alt, photographer, src, liked }) => {
           <hr />
           <span className="author"> {photographer} </span>
           <br />
-          <button className={`fav-btn ${isFavourite ? "favourite" : ""}`} type="button" onClick={toggleFavourite}>
+          <button
+            className={`fav-btn ${isFavourite ? "favourite" : ""}`}
+            type="button"
+            onClick={toggleFavourite}
+          >
             {isFavourite ? "Remove from Favorites" : "Favorite"}
           </button>
         </div>
