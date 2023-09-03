@@ -34,3 +34,10 @@
  .heart::after{
     top: -10px;
  }
+
+ @media only screen and (max-width: 700px) {
+   .navbar-container {
+    flex-direction: column-reverse;  
+    gap: 20px;
+   }
+ }
