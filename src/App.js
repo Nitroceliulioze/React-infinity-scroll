@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 import { FavouritePhotosProvider } from "./context/FavouritePhotosContext";
-import Navbar from "./components/navbar/Navbar";
 import HomePage from "./pages/HomePage";
 
 function App() {
@@ -9,8 +8,7 @@ function App() {
 
   return (
     <FavouritePhotosProvider>
-      <Navbar setSearchQuery={setSearchQuery} />
-      <HomePage searchQuery={searchQuery} />
+      <HomePage  />
     </FavouritePhotosProvider>
   );
 }
