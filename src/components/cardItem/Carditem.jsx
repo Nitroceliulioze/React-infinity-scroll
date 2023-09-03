@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import "./cardItem.css";
-import { useFavouritePhotos } from "../../context/FavouritePhotosContext";
+import { useFavouritePhotos } from "../context/FavouritePhotosContext";
 
 const Carditem = ({ id, alt, photographer, src }) => {
-  const { addToFavourites, removeFromFavourites, favourite } =
-    useFavouritePhotos();
+  const { addToFavourites, removeFromFavourites, favourite } = useFavouritePhotos();
+
   const [isHovered, setIsHovered] = useState(false);
   const [isFavourite, setIsFavourite] = useState(false);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
+
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
@@ -44,11 +45,7 @@ const Carditem = ({ id, alt, photographer, src }) => {
           <hr />
           <span className="author"> {photographer} </span>
           <br />
-          <button
-            className={`fav-btn ${isFavourite ? "favourite" : ""}`}
-            type="button"
-            onClick={toggleFavourite}
-          >
+          <button className={`fav-btn ${isFavourite ? "favourite" : ""}`} type="button" onClick={toggleFavourite}>
             {isFavourite ? "Remove from Favorites" : "Favorite"}
           </button>
         </div>
