@@ -9,7 +9,7 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const query = searchQuery === "" ? "sun" : searchQuery;
+  const query = searchQuery === "" ? "c" : searchQuery;
   const [isFavourite, setIsFavourite] = useState(false);
   const { addToFavourites, removeFromFavourites, favourite } = useFavouritePhotos();
   
@@ -21,7 +21,7 @@ const HomePage = () => {
     setError(false);
     try {
       await fetch(
-        `https://api.pexels.com/v1//search?query=${query}?page=${page}&per_page=${perPage}`,
+        `https://api.pexels.com/v1//search?query=${query}?per_page=${perPage}`,
         {
           headers: {
             Authorization:
